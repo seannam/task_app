@@ -63,7 +63,7 @@
     "nodemon": "^2.0.7",
     "faker": "^5.1.0",
     "supertest": "^6.1.1",
-    "mocha": "~8.4.0",
+    "mocha": "~9.0.3",
     "nyc": "^15.1.0",
     "chai": "^4.3.4",
     "tsconfig-paths": "3.9.0",
