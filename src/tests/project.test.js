@@ -18,7 +18,7 @@ describe('Project tests', () => {
     await startDatabase();
   });
 
-  afterAll(async () => {
+  after(async () => {
     await server.close();
   });
 

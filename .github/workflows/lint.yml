@@ -1,4 +1,4 @@
-name: run linter
+name: Run linter
 
 on:
   push:
@@ -26,6 +26,6 @@ jobs:
           ${{ runner.OS }}-node-
           ${{ runner.OS }}-
     - name: install dependencies
-      run: npm run install
+      run: npm install
     - name: Run linter
-      run: npm run eslint src/
+      run: npm run lint src/
