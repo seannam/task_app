@@ -27,7 +27,6 @@ jobs:
       # Run mocha
       - run:
           name: npm test
-          # command: ./node_modules/.bin/nyc ./node_modules/.bin/mocha src/tests/ --recursive --timeout=10000 --exit --reporter mocha-junit-reporter --reporter-options mochaFile=reports/mocha/test-results.xml
           command: npm run test:ci
           when: always
 
@@ -39,23 +38,23 @@ jobs:
           when: always
 
       # Run coverage report for Code Climate
-      - run:
-          name: Setup Code Climate test-reporter
-          command: |
-              # download test reporter as a static binary
-              curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-              chmod +x ./cc-test-reporter
-              ./cc-test-reporter before-build
-          when: always
-      - run:
-          name: code-coverage
-          command: |
-              mkdir coverage
-              # nyc report requires that nyc has already been run,
-              # which creates the .nyc_output folder containing necessary data
-              ./node_modules/.bin/nyc report --reporter=text-lcov > coverage/lcov.info
-              ./cc-test-reporter after-build -t lcov
-          when: always
+      # - run:
+      #     name: Setup Code Climate test-reporter
+      #     command: |
+      #         # download test reporter as a static binary
+      #         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      #         chmod +x ./cc-test-reporter
+      #         ./cc-test-reporter before-build
+      #     when: always
+      # - run:
+      #     name: code-coverage
+      #     command: |
+      #         mkdir coverage
+      #         # nyc report requires that nyc has already been run,
+      #         # which creates the .nyc_output folder containing necessary data
+      #         ./node_modules/.bin/nyc report --reporter=text-lcov > coverage/lcov.info
+      #         ./cc-test-reporter after-build -t lcov
+      #     when: always
 
       # Upload results
       - store_test_results:
