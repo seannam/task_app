@@ -68,6 +68,6 @@
     "prettier": "^2.2.1",
     "sequelize-cli": "^6.2.0",
     "supertest": "^6.1.1",
-    "tsconfig-paths": "3.9.0"
+    "tsconfig-paths": "3.10.1"
   }
 }
