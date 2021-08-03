@@ -3,11 +3,77 @@ orbs: # declare what orbs we are going to use
 
 version: 2.1 # using 2.1 provides access to orbs and other features
 
+jobs:
+  build:
+    docker:
+      - image: circleci/node:16
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+              - v1-dependencies-{{ checksum "package-lock.json" }}
+              # fallback to using the latest cache if no exact match is found
+              - v1-dependencies-
+      - run: npm install
+      - run: npm install mocha-junit-reporter # just for CircleCI
+      - save_cache:
+          paths:
+              - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - run: mkdir reports
+
+      # Run mocha
+      - run:
+          name: npm test
+          # command: ./node_modules/.bin/nyc ./node_modules/.bin/mocha src/tests/ --recursive --timeout=10000 --exit --reporter mocha-junit-reporter --reporter-options mochaFile=reports/mocha/test-results.xml
+          command: npm run test:ci
+          when: always
+
+      # Run eslint
+      - run:
+          name: eslint
+          command: |
+              ./node_modules/.bin/eslint ./ --format junit --output-file ./reports/eslint/eslint.xml
+          when: always
+
+      # Run coverage report for Code Climate
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+              # download test reporter as a static binary
+              curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+              chmod +x ./cc-test-reporter
+              ./cc-test-reporter before-build
+          when: always
+      - run:
+          name: code-coverage
+          command: |
+              mkdir coverage
+              # nyc report requires that nyc has already been run,
+              # which creates the .nyc_output folder containing necessary data
+              ./node_modules/.bin/nyc report --reporter=text-lcov > coverage/lcov.info
+              ./cc-test-reporter after-build -t lcov
+          when: always
+
+      # Upload results
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: ./reports/mocha/test-results.xml
+      - store_artifacts:
+          path: ./reports/eslint/eslint.xml
+      - store_artifacts: # upload test coverage as artifact
+          path: ./coverage/lcov.info
+          # prefix: tests
+
 workflows:
+  build:
+    jobs:
+      - build
   matrix-tests:
     jobs:
-      - node/test:
-          version: 14.16.0
       - node/test:
           version: 16.5.0
 
