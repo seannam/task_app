@@ -5,7 +5,7 @@ name: Run Tests
 
 on:
   workflow_dispatch:
-  push:
+  # push:
   # schedule:
   #   - cron:  '0 16 * * *'
   
