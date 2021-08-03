@@ -112,3 +112,5 @@ dist
 
 # Imagine Stuff
 .imagine
+
+.DS_Store
