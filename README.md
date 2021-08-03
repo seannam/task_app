@@ -8,11 +8,7 @@ This is a nodejs REST API codebase used for CI/CD pipeline testing. Github Actio
 
 ---
 
-## Imagine.ai
+## Notes
 
-### Learn More
-
-1. Learn more about:
-
-- the [Node architecture choices](https://imagine.ai/docs/architecture-node) used.
-- the [best practices](https://imagine.ai/docs/best-practices) followed.
+- https://gist.github.com/naesheim/18d0c0a58ee61f4674353a2f4cf71475
+- https://circleci.com/docs/2.0/configuration-cookbook/?section=examples-and-guides#execute-specific-workflows-or-steps-based-on-which-files-are-modified

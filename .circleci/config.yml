@@ -1,7 +1,7 @@
+version: 2.1 # using 2.1 provides access to orbs and other features
+
 orbs: # declare what orbs we are going to use
   node: circleci/node@2.0.2 # the node orb provides common node-related configuration
-
-version: 2.1 # using 2.1 provides access to orbs and other features
 
 jobs:
   build:
@@ -49,11 +49,9 @@ jobs:
           # prefix: tests
 
 workflows:
-  build:
+  build_and_test:
     jobs:
       - build
-  matrix-tests:
-    jobs:
       - node/test:
           version: 16.5.0
 
