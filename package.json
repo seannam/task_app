@@ -23,7 +23,7 @@
   "dependencies": {
     "@admin-bro/express": "^3.1.0",
     "@admin-bro/sequelize": "^1.2.1",
-    "admin-bro": "^4.0.0",
+    "admin-bro": "^3.2.5",
     "cookie-parser": "~1.4.4",
     "dayjs": "^1.10.4",
     "dotenv": "^8.2.0",
@@ -33,13 +33,13 @@
     "express-validation": "^3.0.6",
     "http-errors": "~1.8.0",
     "http-status": "^1.5.0",
-    "jade": "~1.11.0",
+    "jade": "^1.9.2",
     "mocha-junit-reporter": "^2.0.0",
     "morgan": "~1.10.0",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.5",
-    "sqlite3": "^5.0.1",
+    "sqlite3": "^4.2.0",
     "swagger-ui-express": "^4.1.6",
     "tslib": "^2.2.0"
   },
@@ -66,6 +66,7 @@
     "nodemon": "^2.0.7",
     "nyc": "^15.1.0",
     "prettier": "^2.2.1",
+    "semistandard": "^16.0.1",
     "sequelize-cli": "^6.2.0",
     "supertest": "^6.1.1",
     "tsconfig-paths": "3.10.1"

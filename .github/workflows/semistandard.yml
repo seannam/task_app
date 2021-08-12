@@ -1,4 +1,4 @@
-name: Run semistandard linter
+name: semistandard
 
 on:
   push:
