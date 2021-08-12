@@ -3,7 +3,7 @@ import { errors } from 'utils/constants/errors';
 import { BaseError } from './BaseError';
 
 class Throttled extends BaseError {
-  constructor(message) {
+  constructor (message) {
     super(
       errors.throttled,
       TOO_MANY_REQUESTS,

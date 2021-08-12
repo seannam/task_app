@@ -3,7 +3,7 @@ import { TeamService } from 'server/services';
 import { NotFound } from 'utils/errors/NotFound';
 
 class TeamController {
-  static async create(req, res, next) {
+  static async create (req, res, next) {
     try {
       const { name, members } = req.body;
       const newTeam = await TeamService.create(name, members);
@@ -15,7 +15,7 @@ class TeamController {
     }
   }
 
-  static async get(req, res, next) {
+  static async get (req, res, next) {
     try {
       const { id } = req.params;
       const teamObject = await TeamService.get(id);
@@ -29,7 +29,7 @@ class TeamController {
     }
   }
 
-  static async getAll(req, res, next) {
+  static async getAll (req, res, next) {
     try {
       const filters = { ...req.query };
       const allTeams = await TeamService.getAll(filters);
@@ -40,7 +40,7 @@ class TeamController {
     }
   }
 
-  static async update(req, res, next) {
+  static async update (req, res, next) {
     try {
       const { id } = req.params;
       const { name, members } = req.body;
@@ -54,7 +54,7 @@ class TeamController {
     }
   }
 
-  static async partialUpdate(req, res, next) {
+  static async partialUpdate (req, res, next) {
     try {
       const { id } = req.params;
       const { name, members } = req.body;
@@ -68,7 +68,7 @@ class TeamController {
     }
   }
 
-  static async destroy(req, res, next) {
+  static async destroy (req, res, next) {
     try {
       const { id } = req.params;
       const teamDelete = await TeamService.destroy(id);

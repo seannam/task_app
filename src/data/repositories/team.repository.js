@@ -2,9 +2,9 @@ import { Team } from 'data/models';
 import { NotFound } from 'server/utils/errors';
 
 class TeamRepository {
-  static async create(name, members) {
+  static async create (name, members) {
     const createdTeam = await Team.create({
-      name,
+      name
     });
 
     if (members) await createdTeam.setMembers(members);
@@ -12,26 +12,26 @@ class TeamRepository {
     return createdTeam;
   }
 
-  static get(id) {
+  static get (id) {
     return Team.findByPk(id, { include: ['members'] });
   }
 
-  static getAll(filters) {
+  static getAll (filters) {
     return Team.findAll({
       where: filters,
-      include: ['members'],
+      include: ['members']
     });
   }
 
-  static async update(id, name, members) {
+  static async update (id, name, members) {
     return this.partialUpdate({
       id,
       name,
-      members,
+      members
     });
   }
 
-  static async partialUpdate({ id, name, members }) {
+  static async partialUpdate ({ id, name, members }) {
     const foundTeam = await Team.findByPk(id);
     if (!foundTeam) throw new NotFound(`Team with primary key ${id} not found`);
     if (name !== undefined) foundTeam.name = name;
@@ -40,7 +40,7 @@ class TeamRepository {
     return foundTeam.reload();
   }
 
-  static async destroy(id) {
+  static async destroy (id) {
     const foundTeam = await Team.findByPk(id);
     if (!foundTeam) throw new NotFound(`Team with primary key ${id} not found`);
     await foundTeam.destroy();

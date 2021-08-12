@@ -3,7 +3,7 @@ import { errors } from 'utils/constants/errors';
 import { BaseError } from './BaseError';
 
 class UnsupportedMediaType extends BaseError {
-  constructor(message) {
+  constructor (message) {
     super(
       errors.unsupported_media_type,
       UNSUPPORTED_MEDIA_TYPE,

@@ -2,7 +2,7 @@ import { Task } from 'data/models';
 import { NotFound } from 'server/utils/errors';
 
 class TaskRepository {
-  static async create(
+  static async create (
     title,
     body,
     dueDate,
@@ -28,24 +28,24 @@ class TaskRepository {
       creator,
       assignedPrimary,
       assignedSecondary,
-      parentTask,
+      parentTask
     });
 
     return createdTask;
   }
 
-  static get(id) {
+  static get (id) {
     return Task.findByPk(id, { include: ['subtasks'] });
   }
 
-  static getAll(filters) {
+  static getAll (filters) {
     return Task.findAll({
       where: filters,
-      include: ['subtasks'],
+      include: ['subtasks']
     });
   }
 
-  static async update(
+  static async update (
     id,
     title,
     body,
@@ -73,11 +73,11 @@ class TaskRepository {
       creator,
       assignedPrimary,
       assignedSecondary,
-      parentTask,
+      parentTask
     });
   }
 
-  static async partialUpdate({
+  static async partialUpdate ({
     id,
     title,
     body,
@@ -90,7 +90,7 @@ class TaskRepository {
     creator,
     assignedPrimary,
     assignedSecondary,
-    parentTask,
+    parentTask
   }) {
     const foundTask = await Task.findByPk(id);
     if (!foundTask) throw new NotFound(`Task with primary key ${id} not found`);
@@ -103,16 +103,14 @@ class TaskRepository {
     if (storyPoint !== undefined) foundTask.storyPoint = storyPoint;
     if (project !== undefined) foundTask.project = project;
     if (creator !== undefined) foundTask.creator = creator;
-    if (assignedPrimary !== undefined)
-      foundTask.assignedPrimary = assignedPrimary;
-    if (assignedSecondary !== undefined)
-      foundTask.assignedSecondary = assignedSecondary;
+    if (assignedPrimary !== undefined) { foundTask.assignedPrimary = assignedPrimary; }
+    if (assignedSecondary !== undefined) { foundTask.assignedSecondary = assignedSecondary; }
     if (parentTask !== undefined) foundTask.parentTask = parentTask;
     await foundTask.save();
     return foundTask.reload();
   }
 
-  static async destroy(id) {
+  static async destroy (id) {
     const foundTask = await Task.findByPk(id);
     if (!foundTask) throw new NotFound(`Task with primary key ${id} not found`);
     await foundTask.destroy();

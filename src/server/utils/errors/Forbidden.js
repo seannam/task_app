@@ -3,7 +3,7 @@ import { errors } from 'utils/constants/errors';
 import { BaseError } from './BaseError';
 
 class Forbidden extends BaseError {
-  constructor(message) {
+  constructor (message) {
     super(
       errors.permission_denied,
       FORBIDDEN,

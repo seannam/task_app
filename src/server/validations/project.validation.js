@@ -4,8 +4,8 @@ const projectValidation = {
   getAll: {
     query: Joi.object({
       projectName: Joi.string().max(30),
-      creation: Joi.date(),
-    }),
+      creation: Joi.date()
+    })
   },
   create: {
     body: Joi.object({
@@ -13,34 +13,34 @@ const projectValidation = {
       creator: Joi.string()
         .uuid({ version: ['uuidv4'] })
         .required(),
-      creation: Joi.date(),
-    }),
+      creation: Joi.date()
+    })
   },
   update: {
     params: Joi.object({
-      projectName: Joi.string().max(30).required(),
+      projectName: Joi.string().max(30).required()
     }),
     body: Joi.object({
       creation: Joi.date().required(),
       creator: Joi.string()
         .uuid({ version: ['uuidv4'] })
-        .required(),
-    }),
+        .required()
+    })
   },
   partialUpdate: {
     params: Joi.object({
-      projectName: Joi.string().max(30).required(),
+      projectName: Joi.string().max(30).required()
     }),
     body: Joi.object({
       creation: Joi.date(),
-      creator: Joi.string().uuid({ version: ['uuidv4'] }),
-    }),
+      creator: Joi.string().uuid({ version: ['uuidv4'] })
+    })
   },
   destroy: {
     params: Joi.object({
-      projectName: Joi.string().max(30).required(),
-    }),
-  },
+      projectName: Joi.string().max(30).required()
+    })
+  }
 };
 
 export { projectValidation };

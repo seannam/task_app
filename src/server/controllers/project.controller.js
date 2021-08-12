@@ -3,7 +3,7 @@ import { ProjectService, UserService } from 'server/services';
 import { NotFound } from 'utils/errors/NotFound';
 
 class ProjectController {
-  static async create(req, res, next) {
+  static async create (req, res, next) {
     try {
       const { projectName, creation, creator } = req.body;
       if (creator !== null && typeof creator !== 'undefined') {
@@ -25,7 +25,7 @@ class ProjectController {
     }
   }
 
-  static async get(req, res, next) {
+  static async get (req, res, next) {
     try {
       const { projectName } = req.params;
       const projectObject = await ProjectService.get(projectName);
@@ -39,7 +39,7 @@ class ProjectController {
     }
   }
 
-  static async getAll(req, res, next) {
+  static async getAll (req, res, next) {
     try {
       const filters = { ...req.query };
       const allProjects = await ProjectService.getAll(filters);
@@ -50,7 +50,7 @@ class ProjectController {
     }
   }
 
-  static async update(req, res, next) {
+  static async update (req, res, next) {
     try {
       const { projectName } = req.params;
       const { creation, creator } = req.body;
@@ -73,7 +73,7 @@ class ProjectController {
     }
   }
 
-  static async partialUpdate(req, res, next) {
+  static async partialUpdate (req, res, next) {
     try {
       const { projectName } = req.params;
       const { creation, creator } = req.body;
@@ -96,7 +96,7 @@ class ProjectController {
     }
   }
 
-  static async destroy(req, res, next) {
+  static async destroy (req, res, next) {
     try {
       const { projectName } = req.params;
       const projectDelete = await ProjectService.destroy(projectName);

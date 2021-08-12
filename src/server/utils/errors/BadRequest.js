@@ -3,7 +3,7 @@ import { errors } from 'utils/constants/errors';
 import { BaseError } from './BaseError';
 
 class BadRequest extends BaseError {
-  constructor(message) {
+  constructor (message) {
     super(errors.validation, BAD_REQUEST, message || httpStatus['400_MESSAGE']);
   }
 }

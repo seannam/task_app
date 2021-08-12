@@ -8,30 +8,30 @@ const userModel = (sequelize) => {
         type: DataTypes.UUID,
         primaryKey: true,
         allowNull: false,
-        defaultValue: DataTypes.UUIDV4,
+        defaultValue: DataTypes.UUIDV4
       },
       username: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [0, 80],
-        },
+          len: [0, 80]
+        }
       },
       firstName: {
         type: DataTypes.STRING,
         validate: {
-          len: [0, 80],
-        },
+          len: [0, 80]
+        }
       },
       lastName: {
         type: DataTypes.STRING,
         validate: {
-          len: [0, 80],
-        },
-      },
+          len: [0, 80]
+        }
+      }
     },
     {
-      freezeTableName: true,
+      freezeTableName: true
     }
   );
   User.associate = (models) => {
@@ -39,24 +39,24 @@ const userModel = (sequelize) => {
       foreignKey: { name: 'creator', allowNull: false },
       as: 'createdTasks',
 
-      onDelete: 'cascade',
+      onDelete: 'cascade'
     });
     User.hasMany(models.Task, {
       foreignKey: { name: 'assignedPrimary', allowNull: false },
       as: 'assignedTasksPrimary',
 
-      onDelete: 'cascade',
+      onDelete: 'cascade'
     });
     User.hasMany(models.Task, {
       foreignKey: { name: 'assignedSecondary' },
       as: 'assignedTasksSecondary',
-      constraints: false,
+      constraints: false
     });
     User.hasMany(models.Project, {
       foreignKey: { name: 'creator', allowNull: false },
       as: 'createdProjects',
 
-      onDelete: 'cascade',
+      onDelete: 'cascade'
     });
     User.belongsToMany(models.Team, { as: 'memberOf', through: 'TeamMembers' });
   };

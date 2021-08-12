@@ -4,50 +4,50 @@ const teamValidation = {
   getAll: {
     query: Joi.object({
       id: Joi.string().uuid({ version: ['uuidv4'] }),
-      name: Joi.string().max(80),
-    }),
+      name: Joi.string().max(80)
+    })
   },
   create: {
     body: Joi.object({
       name: Joi.string().max(80).required(),
       members: Joi.array()
         .items(Joi.string().uuid({ version: ['uuidv4'] }))
-        .default([]),
-    }),
+        .default([])
+    })
   },
   update: {
     params: Joi.object({
       id: Joi.string()
         .uuid({ version: ['uuidv4'] })
-        .required(),
+        .required()
     }),
     body: Joi.object({
       name: Joi.string().max(80).required(),
       members: Joi.array()
         .items(Joi.string().uuid({ version: ['uuidv4'] }))
-        .default([]),
-    }),
+        .default([])
+    })
   },
   partialUpdate: {
     params: Joi.object({
       id: Joi.string()
         .uuid({ version: ['uuidv4'] })
-        .required(),
+        .required()
     }),
     body: Joi.object({
       name: Joi.string().max(80),
       members: Joi.array()
         .items(Joi.string().uuid({ version: ['uuidv4'] }))
-        .default([]),
-    }),
+        .default([])
+    })
   },
   destroy: {
     params: Joi.object({
       id: Joi.string()
         .uuid({ version: ['uuidv4'] })
-        .required(),
-    }),
-  },
+        .required()
+    })
+  }
 };
 
 export { teamValidation };

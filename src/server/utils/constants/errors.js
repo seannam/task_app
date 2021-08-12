@@ -8,5 +8,5 @@ export const errors = {
   not_acceptable: 'not_acceptable',
   unsupported_media_type: 'unsupported_media_type',
   throttled: 'throttled',
-  server: 'internal_error',
+  server: 'internal_error'
 };

@@ -9,5 +9,5 @@ export {
   responseHandler,
   methodNotAllowedHandler,
   pageNotFoundHandler,
-  initResLocalsHandler,
+  initResLocalsHandler
 };

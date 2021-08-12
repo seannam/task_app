@@ -6,8 +6,8 @@ const userValidation = {
       id: Joi.string().uuid({ version: ['uuidv4'] }),
       username: Joi.string().max(80),
       firstName: Joi.string().max(80),
-      lastName: Joi.string().max(80),
-    }),
+      lastName: Joi.string().max(80)
+    })
   },
   create: {
     body: Joi.object({
@@ -16,14 +16,14 @@ const userValidation = {
       lastName: Joi.string().max(80),
       memberOf: Joi.array()
         .items(Joi.string().uuid({ version: ['uuidv4'] }))
-        .default([]),
-    }),
+        .default([])
+    })
   },
   update: {
     params: Joi.object({
       id: Joi.string()
         .uuid({ version: ['uuidv4'] })
-        .required(),
+        .required()
     }),
     body: Joi.object({
       username: Joi.string().max(80).required(),
@@ -31,14 +31,14 @@ const userValidation = {
       lastName: Joi.string().max(80).required(),
       memberOf: Joi.array()
         .items(Joi.string().uuid({ version: ['uuidv4'] }))
-        .default([]),
-    }),
+        .default([])
+    })
   },
   partialUpdate: {
     params: Joi.object({
       id: Joi.string()
         .uuid({ version: ['uuidv4'] })
-        .required(),
+        .required()
     }),
     body: Joi.object({
       username: Joi.string().max(80),
@@ -46,16 +46,16 @@ const userValidation = {
       lastName: Joi.string().max(80),
       memberOf: Joi.array()
         .items(Joi.string().uuid({ version: ['uuidv4'] }))
-        .default([]),
-    }),
+        .default([])
+    })
   },
   destroy: {
     params: Joi.object({
       id: Joi.string()
         .uuid({ version: ['uuidv4'] })
-        .required(),
-    }),
-  },
+        .required()
+    })
+  }
 };
 
 export { userValidation };

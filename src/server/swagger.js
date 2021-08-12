@@ -14,10 +14,10 @@ const swaggerDocument = {
           200: {
             description: 'Returns a list',
             schema: {
-              $ref: '#/definitions/Task',
-            },
-          },
-        },
+              $ref: '#/definitions/Task'
+            }
+          }
+        }
       },
       post: {
         summary: 'Creates a task',
@@ -28,20 +28,20 @@ const swaggerDocument = {
             in: 'body',
             required: true,
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateTask',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateTask'
+            }
+          }
         ],
         produces: ['application/json'],
         responses: {
           201: {
             description: 'Returns a new task',
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateTask',
-            },
-          },
-        },
-      },
+              $ref: '#/createUpdateDef/CreateUpdateTask'
+            }
+          }
+        }
+      }
     },
     '/task/{id}': {
       get: {
@@ -52,17 +52,17 @@ const swaggerDocument = {
             name: 'id',
             in: 'path',
             required: true,
-            type: 'string',
-          },
+            type: 'string'
+          }
         ],
         responses: {
           200: {
             description: 'Returns a task with primary key',
             schema: {
-              $ref: '#/definitions/Task',
-            },
-          },
-        },
+              $ref: '#/definitions/Task'
+            }
+          }
+        }
       },
       delete: {
         summary: 'Deletes a task by its primary key',
@@ -72,14 +72,14 @@ const swaggerDocument = {
             name: 'id',
             in: 'path',
             required: true,
-            type: 'string',
-          },
+            type: 'string'
+          }
         ],
         responses: {
           200: {
-            description: 'OK',
-          },
-        },
+            description: 'OK'
+          }
+        }
       },
       put: {
         summary: 'Overrides the values of a task',
@@ -90,26 +90,26 @@ const swaggerDocument = {
             in: 'path',
             required: true,
             schema: {
-              $ref: '#/definitions/Task',
-            },
+              $ref: '#/definitions/Task'
+            }
           },
           {
             name: 'task',
             in: 'body',
             required: true,
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateTask',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateTask'
+            }
+          }
         ],
         responses: {
           200: {
             description: 'Returns a task',
             schema: {
-              $ref: '#/definitions/Task',
-            },
-          },
-        },
+              $ref: '#/definitions/Task'
+            }
+          }
+        }
       },
       patch: {
         tags: ['task'],
@@ -119,26 +119,26 @@ const swaggerDocument = {
             name: 'id',
             in: 'path',
             schema: {
-              $ref: '#/definitions/Task',
-            },
+              $ref: '#/definitions/Task'
+            }
           },
           {
             name: 'task',
             in: 'body',
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateTask',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateTask'
+            }
+          }
         ],
         responses: {
           200: {
             description: 'Returns a task and its partially overwritten values',
             schema: {
-              $ref: '#/definitions/Task',
-            },
-          },
-        },
-      },
+              $ref: '#/definitions/Task'
+            }
+          }
+        }
+      }
     },
 
     '/project/': {
@@ -150,10 +150,10 @@ const swaggerDocument = {
           200: {
             description: 'Returns a list',
             schema: {
-              $ref: '#/definitions/Project',
-            },
-          },
-        },
+              $ref: '#/definitions/Project'
+            }
+          }
+        }
       },
       post: {
         summary: 'Creates a project',
@@ -164,20 +164,20 @@ const swaggerDocument = {
             in: 'body',
             required: true,
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateProject',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateProject'
+            }
+          }
         ],
         produces: ['application/json'],
         responses: {
           201: {
             description: 'Returns a new project',
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateProject',
-            },
-          },
-        },
-      },
+              $ref: '#/createUpdateDef/CreateUpdateProject'
+            }
+          }
+        }
+      }
     },
     '/project/{projectName}': {
       get: {
@@ -188,17 +188,17 @@ const swaggerDocument = {
             name: 'projectName',
             in: 'path',
             required: true,
-            type: 'string',
-          },
+            type: 'string'
+          }
         ],
         responses: {
           200: {
             description: 'Returns a project with primary key',
             schema: {
-              $ref: '#/definitions/Project',
-            },
-          },
-        },
+              $ref: '#/definitions/Project'
+            }
+          }
+        }
       },
       delete: {
         summary: 'Deletes a project by its primary key',
@@ -208,14 +208,14 @@ const swaggerDocument = {
             name: 'projectName',
             in: 'path',
             required: true,
-            type: 'string',
-          },
+            type: 'string'
+          }
         ],
         responses: {
           200: {
-            description: 'OK',
-          },
-        },
+            description: 'OK'
+          }
+        }
       },
       put: {
         summary: 'Overrides the values of a project',
@@ -226,26 +226,26 @@ const swaggerDocument = {
             in: 'path',
             required: true,
             schema: {
-              $ref: '#/definitions/Project',
-            },
+              $ref: '#/definitions/Project'
+            }
           },
           {
             name: 'project',
             in: 'body',
             required: true,
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateProject',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateProject'
+            }
+          }
         ],
         responses: {
           200: {
             description: 'Returns a project',
             schema: {
-              $ref: '#/definitions/Project',
-            },
-          },
-        },
+              $ref: '#/definitions/Project'
+            }
+          }
+        }
       },
       patch: {
         tags: ['project'],
@@ -255,27 +255,27 @@ const swaggerDocument = {
             name: 'projectName',
             in: 'path',
             schema: {
-              $ref: '#/definitions/Project',
-            },
+              $ref: '#/definitions/Project'
+            }
           },
           {
             name: 'project',
             in: 'body',
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateProject',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateProject'
+            }
+          }
         ],
         responses: {
           200: {
             description:
               'Returns a project and its partially overwritten values',
             schema: {
-              $ref: '#/definitions/Project',
-            },
-          },
-        },
-      },
+              $ref: '#/definitions/Project'
+            }
+          }
+        }
+      }
     },
 
     '/user/': {
@@ -287,10 +287,10 @@ const swaggerDocument = {
           200: {
             description: 'Returns a list',
             schema: {
-              $ref: '#/definitions/User',
-            },
-          },
-        },
+              $ref: '#/definitions/User'
+            }
+          }
+        }
       },
       post: {
         summary: 'Creates a user',
@@ -301,20 +301,20 @@ const swaggerDocument = {
             in: 'body',
             required: true,
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateUser',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateUser'
+            }
+          }
         ],
         produces: ['application/json'],
         responses: {
           201: {
             description: 'Returns a new user',
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateUser',
-            },
-          },
-        },
-      },
+              $ref: '#/createUpdateDef/CreateUpdateUser'
+            }
+          }
+        }
+      }
     },
     '/user/{id}': {
       get: {
@@ -325,17 +325,17 @@ const swaggerDocument = {
             name: 'id',
             in: 'path',
             required: true,
-            type: 'string',
-          },
+            type: 'string'
+          }
         ],
         responses: {
           200: {
             description: 'Returns a user with primary key',
             schema: {
-              $ref: '#/definitions/User',
-            },
-          },
-        },
+              $ref: '#/definitions/User'
+            }
+          }
+        }
       },
       delete: {
         summary: 'Deletes a user by its primary key',
@@ -345,14 +345,14 @@ const swaggerDocument = {
             name: 'id',
             in: 'path',
             required: true,
-            type: 'string',
-          },
+            type: 'string'
+          }
         ],
         responses: {
           200: {
-            description: 'OK',
-          },
-        },
+            description: 'OK'
+          }
+        }
       },
       put: {
         summary: 'Overrides the values of a user',
@@ -363,26 +363,26 @@ const swaggerDocument = {
             in: 'path',
             required: true,
             schema: {
-              $ref: '#/definitions/User',
-            },
+              $ref: '#/definitions/User'
+            }
           },
           {
             name: 'user',
             in: 'body',
             required: true,
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateUser',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateUser'
+            }
+          }
         ],
         responses: {
           200: {
             description: 'Returns a user',
             schema: {
-              $ref: '#/definitions/User',
-            },
-          },
-        },
+              $ref: '#/definitions/User'
+            }
+          }
+        }
       },
       patch: {
         tags: ['user'],
@@ -392,26 +392,26 @@ const swaggerDocument = {
             name: 'id',
             in: 'path',
             schema: {
-              $ref: '#/definitions/User',
-            },
+              $ref: '#/definitions/User'
+            }
           },
           {
             name: 'user',
             in: 'body',
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateUser',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateUser'
+            }
+          }
         ],
         responses: {
           200: {
             description: 'Returns a user and its partially overwritten values',
             schema: {
-              $ref: '#/definitions/User',
-            },
-          },
-        },
-      },
+              $ref: '#/definitions/User'
+            }
+          }
+        }
+      }
     },
 
     '/team/': {
@@ -423,10 +423,10 @@ const swaggerDocument = {
           200: {
             description: 'Returns a list',
             schema: {
-              $ref: '#/definitions/Team',
-            },
-          },
-        },
+              $ref: '#/definitions/Team'
+            }
+          }
+        }
       },
       post: {
         summary: 'Creates a team',
@@ -437,20 +437,20 @@ const swaggerDocument = {
             in: 'body',
             required: true,
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateTeam',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateTeam'
+            }
+          }
         ],
         produces: ['application/json'],
         responses: {
           201: {
             description: 'Returns a new team',
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateTeam',
-            },
-          },
-        },
-      },
+              $ref: '#/createUpdateDef/CreateUpdateTeam'
+            }
+          }
+        }
+      }
     },
     '/team/{id}': {
       get: {
@@ -461,17 +461,17 @@ const swaggerDocument = {
             name: 'id',
             in: 'path',
             required: true,
-            type: 'string',
-          },
+            type: 'string'
+          }
         ],
         responses: {
           200: {
             description: 'Returns a team with primary key',
             schema: {
-              $ref: '#/definitions/Team',
-            },
-          },
-        },
+              $ref: '#/definitions/Team'
+            }
+          }
+        }
       },
       delete: {
         summary: 'Deletes a team by its primary key',
@@ -481,14 +481,14 @@ const swaggerDocument = {
             name: 'id',
             in: 'path',
             required: true,
-            type: 'string',
-          },
+            type: 'string'
+          }
         ],
         responses: {
           200: {
-            description: 'OK',
-          },
-        },
+            description: 'OK'
+          }
+        }
       },
       put: {
         summary: 'Overrides the values of a team',
@@ -499,26 +499,26 @@ const swaggerDocument = {
             in: 'path',
             required: true,
             schema: {
-              $ref: '#/definitions/Team',
-            },
+              $ref: '#/definitions/Team'
+            }
           },
           {
             name: 'team',
             in: 'body',
             required: true,
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateTeam',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateTeam'
+            }
+          }
         ],
         responses: {
           200: {
             description: 'Returns a team',
             schema: {
-              $ref: '#/definitions/Team',
-            },
-          },
-        },
+              $ref: '#/definitions/Team'
+            }
+          }
+        }
       },
       patch: {
         tags: ['team'],
@@ -528,27 +528,27 @@ const swaggerDocument = {
             name: 'id',
             in: 'path',
             schema: {
-              $ref: '#/definitions/Team',
-            },
+              $ref: '#/definitions/Team'
+            }
           },
           {
             name: 'team',
             in: 'body',
             schema: {
-              $ref: '#/createUpdateDef/CreateUpdateTeam',
-            },
-          },
+              $ref: '#/createUpdateDef/CreateUpdateTeam'
+            }
+          }
         ],
         responses: {
           200: {
             description: 'Returns a team and its partially overwritten values',
             schema: {
-              $ref: '#/definitions/Team',
-            },
-          },
-        },
-      },
-    },
+              $ref: '#/definitions/Team'
+            }
+          }
+        }
+      }
+    }
   },
   definitions: {
     Task: {
@@ -558,72 +558,72 @@ const swaggerDocument = {
           type: 'string',
           format: 'uuid',
           uniqueItems: true,
-          readOnly: true,
+          readOnly: true
         },
         title: {
           type: 'string',
-          maxLength: 20,
+          maxLength: 20
         },
         body: {
           type: 'string',
-          maxLength: 1000,
+          maxLength: 1000
         },
         dueDate: {
           type: 'string',
-          format: 'date',
+          format: 'date'
         },
         status: {
           type: 'string',
-          enum: ['To do', 'In progress', 'Done'],
+          enum: ['To do', 'In progress', 'Done']
         },
         creation: {
           type: 'string',
-          format: 'date-time',
+          format: 'date-time'
         },
         priority: {
           type: 'integer',
           format: 'int32',
           minimum: 1,
-          maximum: 5,
+          maximum: 5
         },
         storyPoint: {
           type: 'number',
-          format: 'float',
+          format: 'float'
         },
         project: {
           type: 'string',
           uniqueItems: true,
-          maxLength: 30,
+          maxLength: 30
         },
         creator: {
           type: 'string',
           format: 'uuid',
-          uniqueItems: true,
+          uniqueItems: true
         },
         assignedPrimary: {
           type: 'string',
           format: 'uuid',
-          uniqueItems: true,
+          uniqueItems: true
         },
         assignedSecondary: {
           type: 'string',
           format: 'uuid',
-          uniqueItems: true,
+          uniqueItems: true
         },
         parentTask: {
           type: 'string',
           format: 'uuid',
-          uniqueItems: true,
+          uniqueItems: true
         },
         subtasks: {
           type: 'array',
           items: {
             type: 'string',
-            format: 'uuid',
+            format: 'uuid'
           },
-          uniqueItems: true,
-        },
-      },
+          uniqueItems: true
+        }
+      }
     },
 
     Project: {
@@ -632,26 +632,26 @@ const swaggerDocument = {
         projectName: {
           type: 'string',
           uniqueItems: true,
-          maxLength: 30,
+          maxLength: 30
         },
         creation: {
           type: 'string',
-          format: 'date-time',
+          format: 'date-time'
         },
         creator: {
           type: 'string',
           format: 'uuid',
-          uniqueItems: true,
+          uniqueItems: true
         },
         tasks: {
           type: 'array',
           items: {
             type: 'string',
-            format: 'uuid',
+            format: 'uuid'
           },
-          uniqueItems: true,
-        },
-      },
+          uniqueItems: true
+        }
+      }
     },
 
     User: {
@@ -661,61 +661,61 @@ const swaggerDocument = {
           type: 'string',
           format: 'uuid',
           uniqueItems: true,
-          readOnly: true,
+          readOnly: true
         },
         username: {
           type: 'string',
-          maxLength: 80,
+          maxLength: 80
         },
         firstName: {
           type: 'string',
-          maxLength: 80,
+          maxLength: 80
         },
         lastName: {
           type: 'string',
-          maxLength: 80,
+          maxLength: 80
         },
         createdTasks: {
           type: 'array',
           items: {
             type: 'string',
-            format: 'uuid',
+            format: 'uuid'
           },
-          uniqueItems: true,
+          uniqueItems: true
         },
         assignedTasksPrimary: {
           type: 'array',
           items: {
             type: 'string',
-            format: 'uuid',
+            format: 'uuid'
           },
-          uniqueItems: true,
+          uniqueItems: true
         },
         assignedTasksSecondary: {
           type: 'array',
           items: {
             type: 'string',
-            format: 'uuid',
+            format: 'uuid'
           },
-          uniqueItems: true,
+          uniqueItems: true
         },
         createdProjects: {
           type: 'array',
           items: {
             type: 'string',
-            maxLength: 30,
+            maxLength: 30
           },
-          uniqueItems: true,
+          uniqueItems: true
         },
         memberOf: {
           type: 'array',
           items: {
             type: 'string',
-            format: 'uuid',
+            format: 'uuid'
           },
-          uniqueItems: true,
-        },
-      },
+          uniqueItems: true
+        }
+      }
     },
 
     Team: {
@@ -725,22 +725,22 @@ const swaggerDocument = {
           type: 'string',
           format: 'uuid',
           uniqueItems: true,
-          readOnly: true,
+          readOnly: true
         },
         name: {
           type: 'string',
-          maxLength: 80,
+          maxLength: 80
         },
         members: {
           type: 'array',
           items: {
             type: 'string',
-            format: 'uuid',
+            format: 'uuid'
           },
-          uniqueItems: true,
-        },
-      },
-    },
+          uniqueItems: true
+        }
+      }
+    }
   },
   createUpdateDef: {
     CreateUpdateTask: {
@@ -750,64 +750,64 @@ const swaggerDocument = {
           type: 'string',
           format: 'uuid',
           uniqueItems: true,
-          readOnly: true,
+          readOnly: true
         },
         title: {
           type: 'string',
-          maxLength: 20,
+          maxLength: 20
         },
         body: {
           type: 'string',
-          maxLength: 1000,
+          maxLength: 1000
         },
         dueDate: {
           type: 'string',
-          format: 'date',
+          format: 'date'
         },
         status: {
           type: 'string',
-          enum: ['To do', 'In progress', 'Done'],
+          enum: ['To do', 'In progress', 'Done']
         },
         creation: {
           type: 'string',
-          format: 'date-time',
+          format: 'date-time'
         },
         priority: {
           type: 'integer',
           format: 'int32',
           minimum: 1,
-          maximum: 5,
+          maximum: 5
         },
         storyPoint: {
           type: 'number',
-          format: 'float',
+          format: 'float'
         },
         project: {
           type: 'string',
           uniqueItems: true,
-          maxLength: 30,
+          maxLength: 30
         },
         creator: {
           type: 'string',
           format: 'uuid',
-          uniqueItems: true,
+          uniqueItems: true
         },
         assignedPrimary: {
           type: 'string',
           format: 'uuid',
-          uniqueItems: true,
+          uniqueItems: true
         },
         assignedSecondary: {
           type: 'string',
           format: 'uuid',
-          uniqueItems: true,
+          uniqueItems: true
         },
         parentTask: {
           type: 'string',
           format: 'uuid',
-          uniqueItems: true,
-        },
-      },
+          uniqueItems: true
+        }
+      }
     },
 
     CreateUpdateProject: {
@@ -816,18 +816,18 @@ const swaggerDocument = {
         projectName: {
           type: 'string',
           uniqueItems: true,
-          maxLength: 30,
+          maxLength: 30
         },
         creation: {
           type: 'string',
-          format: 'date-time',
+          format: 'date-time'
         },
         creator: {
           type: 'string',
           format: 'uuid',
-          uniqueItems: true,
-        },
-      },
+          uniqueItems: true
+        }
+      }
     },
 
     CreateUpdateUser: {
@@ -837,29 +837,29 @@ const swaggerDocument = {
           type: 'string',
           format: 'uuid',
           uniqueItems: true,
-          readOnly: true,
+          readOnly: true
         },
         username: {
           type: 'string',
-          maxLength: 80,
+          maxLength: 80
         },
         firstName: {
           type: 'string',
-          maxLength: 80,
+          maxLength: 80
         },
         lastName: {
           type: 'string',
-          maxLength: 80,
+          maxLength: 80
         },
         memberOf: {
           type: 'array',
           items: {
             type: 'string',
-            format: 'uuid',
+            format: 'uuid'
           },
-          uniqueItems: true,
-        },
-      },
+          uniqueItems: true
+        }
+      }
     },
 
     CreateUpdateTeam: {
@@ -869,23 +869,23 @@ const swaggerDocument = {
           type: 'string',
           format: 'uuid',
           uniqueItems: true,
-          readOnly: true,
+          readOnly: true
         },
         name: {
           type: 'string',
-          maxLength: 80,
+          maxLength: 80
         },
         members: {
           type: 'array',
           items: {
             type: 'string',
-            format: 'uuid',
+            format: 'uuid'
           },
-          uniqueItems: true,
-        },
-      },
-    },
-  },
+          uniqueItems: true
+        }
+      }
+    }
+  }
 };
 
 export { swaggerDocument };

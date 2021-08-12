@@ -15,7 +15,7 @@ const adminBro = new AdminBro({
       options: {
         parent: {
           name: 'Database',
-          icon: 'Api',
+          icon: 'Api'
         },
         listProperties: [
           'id',
@@ -25,66 +25,66 @@ const adminBro = new AdminBro({
           'status',
           'creation',
           'priority',
-          'storyPoint',
+          'storyPoint'
         ],
         properties: {
           status: {
             availableValues: taskStatusChoices.map((status) => ({
               value: status,
-              label: status.toUpperCase(),
-            })),
-          },
-        },
-      },
+              label: status.toUpperCase()
+            }))
+          }
+        }
+      }
     },
     {
       resource: sequelize.models.Project,
       options: {
         parent: {
           name: 'Database',
-          icon: 'Api',
+          icon: 'Api'
         },
         listProperties: ['projectName', 'creation'],
         actions: {
           new: {
-            handler: customNew,
-          },
+            handler: customNew
+          }
         },
         properties: {
           projectName: {
             isVisible: true,
-            isRequired: true,
-          },
-        },
-      },
+            isRequired: true
+          }
+        }
+      }
     },
     {
       resource: sequelize.models.User,
       options: {
         parent: {
           name: 'Database',
-          icon: 'Api',
+          icon: 'Api'
         },
-        listProperties: ['id', 'username', 'firstName', 'lastName'],
-      },
+        listProperties: ['id', 'username', 'firstName', 'lastName']
+      }
     },
     {
       resource: sequelize.models.Team,
       options: {
         parent: {
           name: 'Database',
-          icon: 'Api',
+          icon: 'Api'
         },
-        listProperties: ['id', 'name'],
-      },
-    },
+        listProperties: ['id', 'name']
+      }
+    }
   ],
   branding: {
     companyName: 'Database dashboard',
     softwareBrothers: false,
     logo: false,
-    favicon: 'https://imagine.ai/img/favicon.ico',
-  },
+    favicon: 'https://imagine.ai/img/favicon.ico'
+  }
 });
 const router = AdminBroExpress.buildRouter(adminBro);
 

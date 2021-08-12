@@ -1,33 +1,33 @@
 import { UserRepository } from 'data/repositories';
 
 class UserService {
-  static create(username, firstName, lastName, memberOf) {
+  static create (username, firstName, lastName, memberOf) {
     return UserRepository.create(username, firstName, lastName, memberOf);
   }
 
-  static get(id) {
+  static get (id) {
     return UserRepository.get(id);
   }
 
-  static getAll(args) {
+  static getAll (args) {
     return UserRepository.getAll(args);
   }
 
-  static update(id, username, firstName, lastName, memberOf) {
+  static update (id, username, firstName, lastName, memberOf) {
     return UserRepository.update(id, username, firstName, lastName, memberOf);
   }
 
-  static partialUpdate(id, username, firstName, lastName, memberOf) {
+  static partialUpdate (id, username, firstName, lastName, memberOf) {
     return UserRepository.partialUpdate({
       id,
       username,
       firstName,
       lastName,
-      memberOf,
+      memberOf
     });
   }
 
-  static destroy(id) {
+  static destroy (id) {
     return UserRepository.destroy(id);
   }
 }

@@ -3,7 +3,7 @@ import { UserService } from 'server/services';
 import { NotFound } from 'utils/errors/NotFound';
 
 class UserController {
-  static async create(req, res, next) {
+  static async create (req, res, next) {
     try {
       const { username, firstName, lastName, memberOf } = req.body;
       const newUser = await UserService.create(
@@ -20,7 +20,7 @@ class UserController {
     }
   }
 
-  static async get(req, res, next) {
+  static async get (req, res, next) {
     try {
       const { id } = req.params;
       const userObject = await UserService.get(id);
@@ -34,7 +34,7 @@ class UserController {
     }
   }
 
-  static async getAll(req, res, next) {
+  static async getAll (req, res, next) {
     try {
       const filters = { ...req.query };
       const allUsers = await UserService.getAll(filters);
@@ -45,7 +45,7 @@ class UserController {
     }
   }
 
-  static async update(req, res, next) {
+  static async update (req, res, next) {
     try {
       const { id } = req.params;
       const { username, firstName, lastName, memberOf } = req.body;
@@ -65,7 +65,7 @@ class UserController {
     }
   }
 
-  static async partialUpdate(req, res, next) {
+  static async partialUpdate (req, res, next) {
     try {
       const { id } = req.params;
       const { username, firstName, lastName, memberOf } = req.body;
@@ -85,7 +85,7 @@ class UserController {
     }
   }
 
-  static async destroy(req, res, next) {
+  static async destroy (req, res, next) {
     try {
       const { id } = req.params;
       const userDelete = await UserService.destroy(id);

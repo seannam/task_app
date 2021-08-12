@@ -3,7 +3,7 @@ import { TaskService, ProjectService, UserService } from 'server/services';
 import { NotFound } from 'utils/errors/NotFound';
 
 class TaskController {
-  static async create(req, res, next) {
+  static async create (req, res, next) {
     try {
       const {
         title,
@@ -17,7 +17,7 @@ class TaskController {
         creator,
         assignedPrimary,
         assignedSecondary,
-        parentTask,
+        parentTask
       } = req.body;
       if (project !== null && typeof project !== 'undefined') {
         const dbproject = await ProjectService.get(project);
@@ -74,7 +74,7 @@ class TaskController {
     }
   }
 
-  static async get(req, res, next) {
+  static async get (req, res, next) {
     try {
       const { id } = req.params;
       const taskObject = await TaskService.get(id);
@@ -88,7 +88,7 @@ class TaskController {
     }
   }
 
-  static async getAll(req, res, next) {
+  static async getAll (req, res, next) {
     try {
       const filters = { ...req.query };
       const allTasks = await TaskService.getAll(filters);
@@ -99,7 +99,7 @@ class TaskController {
     }
   }
 
-  static async update(req, res, next) {
+  static async update (req, res, next) {
     try {
       const { id } = req.params;
       const {
@@ -114,7 +114,7 @@ class TaskController {
         creator,
         assignedPrimary,
         assignedSecondary,
-        parentTask,
+        parentTask
       } = req.body;
       if (project !== null && typeof project !== 'undefined') {
         if (!(await ProjectService.get(project))) {
@@ -168,7 +168,7 @@ class TaskController {
     }
   }
 
-  static async partialUpdate(req, res, next) {
+  static async partialUpdate (req, res, next) {
     try {
       const { id } = req.params;
       const {
@@ -183,7 +183,7 @@ class TaskController {
         creator,
         assignedPrimary,
         assignedSecondary,
-        parentTask,
+        parentTask
       } = req.body;
       if (project !== null && typeof project !== 'undefined') {
         if (!(await ProjectService.get(project))) {
@@ -237,7 +237,7 @@ class TaskController {
     }
   }
 
-  static async destroy(req, res, next) {
+  static async destroy (req, res, next) {
     try {
       const { id } = req.params;
       const taskDelete = await TaskService.destroy(id);

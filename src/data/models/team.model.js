@@ -8,18 +8,18 @@ const teamModel = (sequelize) => {
         type: DataTypes.UUID,
         primaryKey: true,
         allowNull: false,
-        defaultValue: DataTypes.UUIDV4,
+        defaultValue: DataTypes.UUIDV4
       },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [0, 80],
-        },
-      },
+          len: [0, 80]
+        }
+      }
     },
     {
-      freezeTableName: true,
+      freezeTableName: true
     }
   );
   Team.associate = (models) => {

@@ -15,7 +15,7 @@ import {
   errorHandler,
   responseHandler,
   pageNotFoundHandler,
-  initResLocalsHandler,
+  initResLocalsHandler
 } from './middlewares';
 
 const app = express();

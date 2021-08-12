@@ -7,12 +7,12 @@ const createErrorResponse = (statusCode, type, param, message) => ({
   status_code: statusCode,
   type,
   param,
-  message,
+  message
 });
 
 const createSuccessResponse = (statusCode, data) => ({
   status_code: statusCode,
-  data,
+  data
 });
 
 const getRandomValueFromArray = (arr) =>
@@ -24,5 +24,5 @@ export {
   createErrorResponse,
   createSuccessResponse,
   getRandomValueFromArray,
-  dateToUTC,
+  dateToUTC
 };

@@ -3,7 +3,7 @@ import { errors } from 'utils/constants/errors';
 import { BaseError } from './BaseError';
 
 class NotFound extends BaseError {
-  constructor(message) {
+  constructor (message) {
     super(errors.not_found, NOT_FOUND, message || httpStatus['404_MESSAGE']);
   }
 }

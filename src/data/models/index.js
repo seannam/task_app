@@ -16,7 +16,7 @@ const sequelize = new Sequelize(
   config.password,
   {
     dialect: 'postgres',
-    ...config,
+    ...config
   }
 );
 

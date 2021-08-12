@@ -10,5 +10,5 @@ export {
   projectValidation,
   userValidation,
   teamValidation,
-  options,
+  options
 };

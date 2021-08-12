@@ -2,11 +2,11 @@ import { User } from 'data/models';
 import { NotFound } from 'server/utils/errors';
 
 class UserRepository {
-  static async create(username, firstName, lastName, memberOf) {
+  static async create (username, firstName, lastName, memberOf) {
     const createdUser = await User.create({
       username,
       firstName,
-      lastName,
+      lastName
     });
 
     if (memberOf) await createdUser.setMemberOf(memberOf);
@@ -14,19 +14,19 @@ class UserRepository {
     return createdUser;
   }
 
-  static get(id) {
+  static get (id) {
     return User.findByPk(id, {
       include: [
         'createdTasks',
         'assignedTasksPrimary',
         'assignedTasksSecondary',
         'createdProjects',
-        'memberOf',
-      ],
+        'memberOf'
+      ]
     });
   }
 
-  static getAll(filters) {
+  static getAll (filters) {
     return User.findAll({
       where: filters,
       include: [
@@ -34,22 +34,22 @@ class UserRepository {
         'assignedTasksPrimary',
         'assignedTasksSecondary',
         'createdProjects',
-        'memberOf',
-      ],
+        'memberOf'
+      ]
     });
   }
 
-  static async update(id, username, firstName, lastName, memberOf) {
+  static async update (id, username, firstName, lastName, memberOf) {
     return this.partialUpdate({
       id,
       username,
       firstName,
       lastName,
-      memberOf,
+      memberOf
     });
   }
 
-  static async partialUpdate({ id, username, firstName, lastName, memberOf }) {
+  static async partialUpdate ({ id, username, firstName, lastName, memberOf }) {
     const foundUser = await User.findByPk(id);
     if (!foundUser) throw new NotFound(`User with primary key ${id} not found`);
     if (username !== undefined) foundUser.username = username;
@@ -60,7 +60,7 @@ class UserRepository {
     return foundUser.reload();
   }
 
-  static async destroy(id) {
+  static async destroy (id) {
     const foundUser = await User.findByPk(id);
     if (!foundUser) throw new NotFound(`User with primary key ${id} not found`);
     await foundUser.destroy();

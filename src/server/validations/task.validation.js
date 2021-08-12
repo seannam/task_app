@@ -11,8 +11,8 @@ const taskValidation = {
       status: Joi.string().valid(...taskStatusChoices),
       creation: Joi.date(),
       priority: Joi.number().integer().min(1).max(5),
-      storyPoint: Joi.number(),
-    }),
+      storyPoint: Joi.number()
+    })
   },
   create: {
     body: Joi.object({
@@ -33,14 +33,14 @@ const taskValidation = {
         .required(),
       creation: Joi.date(),
       priority: Joi.number().integer().min(1).max(5),
-      storyPoint: Joi.number(),
-    }),
+      storyPoint: Joi.number()
+    })
   },
   update: {
     params: Joi.object({
       id: Joi.string()
         .uuid({ version: ['uuidv4'] })
-        .required(),
+        .required()
     }),
     body: Joi.object({
       title: Joi.string().max(20).required(),
@@ -60,14 +60,14 @@ const taskValidation = {
         .uuid({ version: ['uuidv4'] })
         .required(),
       assignedSecondary: Joi.string().uuid({ version: ['uuidv4'] }),
-      parentTask: Joi.string().uuid({ version: ['uuidv4'] }),
-    }),
+      parentTask: Joi.string().uuid({ version: ['uuidv4'] })
+    })
   },
   partialUpdate: {
     params: Joi.object({
       id: Joi.string()
         .uuid({ version: ['uuidv4'] })
-        .required(),
+        .required()
     }),
     body: Joi.object({
       title: Joi.string().max(20),
@@ -81,16 +81,16 @@ const taskValidation = {
       creator: Joi.string().uuid({ version: ['uuidv4'] }),
       assignedPrimary: Joi.string().uuid({ version: ['uuidv4'] }),
       assignedSecondary: Joi.string().uuid({ version: ['uuidv4'] }),
-      parentTask: Joi.string().uuid({ version: ['uuidv4'] }),
-    }),
+      parentTask: Joi.string().uuid({ version: ['uuidv4'] })
+    })
   },
   destroy: {
     params: Joi.object({
       id: Joi.string()
         .uuid({ version: ['uuidv4'] })
-        .required(),
-    }),
-  },
+        .required()
+    })
+  }
 };
 
 export { taskValidation };

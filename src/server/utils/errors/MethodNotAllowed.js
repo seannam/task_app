@@ -3,7 +3,7 @@ import { errors } from 'utils/constants/errors';
 import { BaseError } from './BaseError';
 
 class MethodNotAllowed extends BaseError {
-  constructor(message) {
+  constructor (message) {
     super(
       errors.method_not_allowed,
       METHOD_NOT_ALLOWED,

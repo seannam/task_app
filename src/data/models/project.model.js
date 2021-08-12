@@ -9,19 +9,19 @@ const projectModel = (sequelize) => {
         primaryKey: true,
         allowNull: false,
         validate: {
-          len: [0, 30],
-        },
+          len: [0, 30]
+        }
       },
       creation: {
         type: DataTypes.DATE,
         defaultValue: Sequelize.NOW,
         validate: {
-          isDate: true,
-        },
-      },
+          isDate: true
+        }
+      }
     },
     {
-      freezeTableName: true,
+      freezeTableName: true
     }
   );
   Project.associate = (models) => {
@@ -29,11 +29,11 @@ const projectModel = (sequelize) => {
       foreignKey: { name: 'project', allowNull: false },
       as: 'tasks',
 
-      onDelete: 'cascade',
+      onDelete: 'cascade'
     });
     Project.belongsTo(models.User, {
       foreignKey: { name: 'creator', allowNull: false },
-      as: 'creator_',
+      as: 'creator_'
     });
   };
 };

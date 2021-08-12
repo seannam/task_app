@@ -6,7 +6,7 @@ const env = process.env.NODE_ENV || 'development';
 
 module.exports = {
   // if we are running tests we use an in memory db with sqlite
-  dialect: env === 'test' ? `sqlite` : process.env.DB_DIALECT,
+  dialect: env === 'test' ? 'sqlite' : process.env.DB_DIALECT,
   // the storage option is only for sqlite
   storage: env === 'test' ? ':memory:' : process.env.DB_STORAGE,
   username: process.env.POSTGRES_USER,
@@ -15,7 +15,7 @@ module.exports = {
   host: process.env.POSTGRES_HOST,
   port: process.env.POSTGRES_PORT,
   define: {
-    underscore: true,
+    underscore: true
   },
-  logging: false,
+  logging: false
 };

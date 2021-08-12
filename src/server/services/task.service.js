@@ -1,7 +1,7 @@
 import { TaskRepository } from 'data/repositories';
 
 class TaskService {
-  static create(
+  static create (
     title,
     body,
     dueDate,
@@ -31,15 +31,15 @@ class TaskService {
     );
   }
 
-  static get(id) {
+  static get (id) {
     return TaskRepository.get(id);
   }
 
-  static getAll(args) {
+  static getAll (args) {
     return TaskRepository.getAll(args);
   }
 
-  static update(
+  static update (
     id,
     title,
     body,
@@ -71,7 +71,7 @@ class TaskService {
     );
   }
 
-  static partialUpdate(
+  static partialUpdate (
     id,
     title,
     body,
@@ -99,11 +99,11 @@ class TaskService {
       creator,
       assignedPrimary,
       assignedSecondary,
-      parentTask,
+      parentTask
     });
   }
 
-  static destroy(id) {
+  static destroy (id) {
     return TaskRepository.destroy(id);
   }
 }
