@@ -1,6 +1,7 @@
 # task_app
 
-[![CircleCI](https://circleci.com/gh/seannam/task_app.svg?style=shield&circle-token=<YOUR_STATUS_API_TOKEN>)](<LINK>)
+[![CircleCI](https://circleci.com/gh/seannam/task_app.svg?style=shield&circle-token=62dad195929deeba277690a3b7eac2d3b3f9fc66)](<LINK>)
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/standard/semistandard)
 
 ---
 
