@@ -9,7 +9,7 @@
     "docker:build": "docker-compose up --build",
     "docker:up": "docker-compose up",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint": "eslint src/ --fix",
+    "lint": "semistandard --env=mocha --fix",
     "test": "NODE_ENV=test mocha src/tests/**/*.test.js --require @babel/register --collect-coverage --exit",
     "test:ci": "NODE_ENV=test nyc mocha src/tests/**/*.test.js --require @babel/register --collect-coverage --exit --reporter mocha-junit-reporter --reporter-options mochaFile=reports/mocha/test-results.xml",
     "coverage": "nyc yarn test",
